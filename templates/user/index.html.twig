@@ -5,6 +5,7 @@
 {% block body %}
 <div class = "p-4 grid grid-cols-1 gap-4 text-center">
     <h1 class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text:4xl lg:text-4xl dark:text-white">Ajouter un utilisateur</h1>
+    <div class="flex justify-center items-center">
         {{form_start(form)}}
 
             {{form_label(form.name)}}
@@ -33,5 +34,6 @@
         
         {{form_end(form)}}
         <p>{{msg}}</p>
+        </div>
     </div>
 {% endblock %}

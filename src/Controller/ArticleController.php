@@ -57,9 +57,13 @@ class ArticleController extends AbstractController
                 $article->setImgArticle(utilsService::cleanInput($article->getImgArticle()));
             }
 
-            $em->persist($article);
-            $em->flush();
-            $msg = "L'article a bien été ajouté dans la BDD :)";    
+            if(!$repo->findOneBy(['title'=>$article->getTitle(), 'content'=>$article->getContent()])){
+                $em->persist($article);
+                $em->flush();
+                $msg = "L'article a bien été ajouté dans la BDD :)";   
+            } else {
+                $msg = "Cet article existe déjà";
+            }
         }
         return $this->render('article/article_add.html.twig', [
             'form' => $form->createView(),

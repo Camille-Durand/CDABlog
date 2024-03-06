@@ -5,10 +5,12 @@
 {% block body %}
     <div class = "p-4 grid grid-cols-1 gap-4 text-center">
         <h1 class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text:4xl lg:text-4xl dark:text-white">Ajouter une catégorie</h1>
-        {{form_start(form)}}
-            {{form_row(form.name)}}
-            <input type="submit" value="Ajouter" class="relative inline-flex items-center justify-center p-0.5 px-5 py-2.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
-        {{form_end(form)}}
-        <p>{{msg}}</p>
+            <div class="flex justify-center items-center">
+            {{form_start(form)}}
+                {{form_row(form.name)}}
+                <input type="submit" value="Ajouter" class="relative inline-flex items-center justify-center p-0.5 px-5 py-2.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+            {{form_end(form)}}
+            <p>{{msg}}</p>
+        </div>
     </div>
 {% endblock %}
