@@ -20,12 +20,14 @@
         {{form_label(form.pssword.second)}}
         {{form_widget(form.pssword.second)}}
 
-        {{form_error(form.pssword.first)}}
+        {{form_errors(form.pssword.first)}}
 
         {{form_label(form.img)}}
         {{form_widget(form.img)}}
 
-        <input type="submit" value="Ajouter" name="user[ajouter]">
+        {{form_rest(form)}}
+
+        <input type="submit" value="Ajouter" >
     
     {{form_end(form)}}
     <p>{{msg}}</p>

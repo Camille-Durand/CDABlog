@@ -22,7 +22,8 @@ class UserController extends AbstractController
         $gens = new User();
         $form = $this->createForm(UserType::class, $gens);
         $form->handleRequest($request);
-        if($form->isSubmitted()){
+        if($form->isSubmitted() and $form->isValid()){
+
             // clean les values
             $gens->setName(utilsService::cleanInput($gens->getName()));
             $gens->setFirstName(utilsService::cleanInput($gens->getFirstName()));
@@ -35,7 +36,7 @@ class UserController extends AbstractController
             if(!$repo->findOneBy(['mail'=>$gens->getMail()])){
                 //miam miam le mot de passe
                 $gens->setPssword(md5($gens->getPssword()));
-
+                
                 $em->persist($gens);
                 $em->flush();
                 $msg = "L'utilisateur a bien été ajouté dans la BDD :)";    

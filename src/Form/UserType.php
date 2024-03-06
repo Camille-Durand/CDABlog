@@ -19,21 +19,21 @@ class UserType extends AbstractType
             ->add('name', TextType::class,[
                 'attr' => ['class' => 'input'], //attr -> attributs
                 'empty_data' => '',
-                'label' => 'Saisir le nom: ',
+                'label' => 'Nom: ',
                 'label_attr' => ['class' => 'label_input'],
                 'required' => true
             ])
             ->add('firstName', TextType::class,[
                 'attr' => ['class' => 'input'],
                 'empty_data' => '',
-                'label' => 'Saisir le prénom: ',
+                'label' => 'Prénom: ',
                 'label_attr' => ['class' => 'label_input'],
                 'required' => true
             ])
             ->add('mail', EmailType::class,[
                 'attr' => ['class' => 'input'],
                 'empty_data' => '',
-                'label' => 'Saisir le mail: ',
+                'label' => 'Email: ',
                 'label_attr' => ['class' => 'label_input'],
                 'required' => true
             ])
@@ -49,7 +49,7 @@ class UserType extends AbstractType
             ->add('img', TextType::class,[
                 'attr' => ['class' => 'input'],
                 'empty_data' => '',
-                'label' => 'image: ',
+                'label' => 'Image (URL): ',
                 'label_attr' => ['class' => 'label_input'],
                 'required' => true
             ])

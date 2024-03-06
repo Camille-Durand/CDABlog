@@ -18,7 +18,7 @@ class CategoryType extends AbstractType
                 'attr' => [
                     'class' => 'input'
                 ],
-                'label' => 'Saisir le nom de la catégorie: ',
+                'label' => 'Nom: ',
                 'label_attr' => ["class" => 'label_input'],
                 'required' => true
             ])
