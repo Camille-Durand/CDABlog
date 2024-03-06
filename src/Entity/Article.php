@@ -38,7 +38,7 @@ class Article
     #[Groups(['api', 'admin', 'articles:item', 'articles:list'])]
     private ?string $title = null;
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 1000)]
     #[Groups(['api', 'admin', 'articles:item', 'articles:list'])]
     private ?string $content = null;
 
