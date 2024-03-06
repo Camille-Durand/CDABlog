@@ -1,0 +1,17 @@
+{% extends 'header.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+
+    <div class = "p-4">
+        <h1 class="text-4xl font-extrabold dark:text-white pb-4">Home</h1>
+
+        <div class="grid grid-cols-3 gap-4">
+            {% for article in articles %}
+                {% include "composants/_card_article.html.twig" %}
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

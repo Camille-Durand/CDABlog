@@ -1,0 +1,32 @@
+{% extends 'header.html.twig' %}
+
+{% block title %}Ajouter un utilisateur{% endblock %}
+
+{% block body %}
+    {{form_start(form)}}
+
+        {{form_label(form.name)}}
+        {{form_widget(form.name)}}
+
+        {{form_label(form.firstName)}}
+        {{form_widget(form.firstName)}}
+
+        {{form_label(form.mail)}}
+        {{form_widget(form.mail)}}
+
+        {{form_label(form.pssword.first)}}
+        {{form_widget(form.pssword.first)}}
+
+        {{form_label(form.pssword.second)}}
+        {{form_widget(form.pssword.second)}}
+
+        {{form_error(form.pssword.first)}}
+
+        {{form_label(form.img)}}
+        {{form_widget(form.img)}}
+
+        <input type="submit" value="Ajouter" name="user[ajouter]">
+    
+    {{form_end(form)}}
+    <p>{{msg}}</p>
+{% endblock %}

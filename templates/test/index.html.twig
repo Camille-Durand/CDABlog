@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TestController!{% endblock %}
+
+{% block body %}
+
+    <p>nbr1: {{nbr1}}</p>
+    <p>nbr2: {{nbr2}}</p>
+    <p>operator: {{operator}}</p>
+
+    {% if operator == "add" %}
+        <p>Le résultat de l'addition est: {{nbr1 + nbr2}}</p>
+
+    {% elseif operator == "sub" %}
+        <p>Le résultat de la soustraction est: {{nbr1 - nbr2}}</p>
+
+    {% elseif operator == "multi" %}
+        <p>Le résultat de la multiplication est: {{nbr1 * nbr2}}</p>
+
+    {% elseif operator == "div" %}
+        <p>Le résultat de la division est: {{nbr1 / nbr2}}</p>
+    
+    {% else %}
+        <p>Aucune idée de ce qu'est cet opérateur. Impossible de faire un calcul avec ça...</p>
+
+    {% endif %}
+
+{% endblock %}
