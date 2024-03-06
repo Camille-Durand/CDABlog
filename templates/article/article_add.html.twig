@@ -3,30 +3,33 @@
 {% block title %}Ajouter un article{% endblock %}
 
 {% block body %}
-    {{form_start(form)}}
+    <div class = "p-4 grid grid-cols-1 gap-4 text-center">
+        <h1 class="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text:4xl lg:text-4xl dark:text-white">Ajouter un article</h1>
+        {{form_start(form)}}
 
-        {{form_label(form.title)}}
-        {{form_widget(form.title)}}
+            {{form_label(form.title)}}
+            {{form_widget(form.title)}}
 
-        {{form_label(form.content)}}
-        {{form_widget(form.content)}}
+            {{form_label(form.content)}}
+            {{form_widget(form.content)}}
 
-        {{form_label(form.createAt)}}
-        {{form_widget(form.createAt)}}
+            {{form_label(form.createAt)}}
+            {{form_widget(form.createAt)}}
 
-        {{form_label(form.user)}}
-        {{form_widget(form.user)}}
+            {{form_label(form.user)}}
+            {{form_widget(form.user)}}
 
-        {{form_label(form.categories)}}
-        {{form_widget(form.categories)}}
+            {{form_label(form.categories)}}
+            {{form_widget(form.categories)}}
 
-        {{form_label(form.imgArticle)}}
-        {{form_widget(form.imgArticle)}}
+            {{form_label(form.imgArticle)}}
+            {{form_widget(form.imgArticle)}}
 
-        {{form_rest(form)}}
+            {{form_rest(form)}}
 
-        <input type="submit" value="Ajouter" >
-    
-    {{form_end(form)}}
-    <p>{{msg}}</p>
+            <input type="submit" value="Ajouter" class="relative inline-flex items-center justify-center p-0.5 px-5 py-2.5 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+        
+        {{form_end(form)}}
+        <p>{{msg}}</p>
+    </div>
 {% endblock %}

@@ -18,42 +18,47 @@ class ArticleType extends AbstractType
     {
         $builder
             ->add('title', TextType::class,[
-                'attr' => ['class' => 'input'],
+                'attr' => ['class' => 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'],
                 'empty_data' => '',
                 'label' => 'Titre: ',
-                'label_attr' => ['class' => 'label_input'],
+                'label_attr' => ['class' => 'block mb-2 text-sm font-medium text-gray-900 dark:text-white'],
                 'required' => true
             ])
 
             ->add('content', TextType::class,[
-                'attr' => ['class' => 'input'],
+                'attr' => ['class' => 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'],
                 'empty_data' => '',
                 'label' => 'Contenu: ',
-                'label_attr' => ['class' => 'label_input'],
+                'label_attr' => ['class' => 'block mb-2 text-sm font-medium text-gray-900 dark:text-white'],
                 'required' => true
             ])
 
             ->add('createAt', null, [
                 'widget' => 'single_text',
+                'attr' => ['class' => 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500']
             ])
 
             ->add('imgArticle', TextType::class,[
-                'attr' => ['class' => 'input'],
+                'attr' => ['class' => 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'],
                 'empty_data' => '',
                 'label' => 'Image (URL): ',
-                'label_attr' => ['class' => 'label_input'],
+                'label_attr' => ['class' => 'block mb-2 text-sm font-medium text-gray-900 dark:text-white'],
                 'required' => true
             ])
 
             ->add('user', EntityType::class, [
+                'attr' => ['class' => 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'],
                 'class' => User::class,
                 'choice_label' => 'id',
+                'label_attr' => ['class' => 'block mb-2 text-sm font-medium text-gray-900 dark:text-white']
             ])
 
             ->add('categories', EntityType::class, [
+                'attr' => ['class' => 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-96 p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500'],
                 'class' => Category::class,
                 'choice_label' => 'id',
                 'multiple' => true,
+                'label_attr' => ['class' => 'block mb-2 text-sm font-medium text-gray-900 dark:text-white']
             ])
         ;
     }
