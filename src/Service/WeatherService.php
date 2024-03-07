@@ -13,6 +13,7 @@ class WeatherService{
         $this->apiKey = $apiKey;
 
         $this->client = $client;
+
     }
 
     public function getWeather(): array{
@@ -23,5 +24,24 @@ class WeatherService{
 
         $response = $response->toArray();
         return $response;
+    }
+
+    public function getWeatherByCity(string $city): array{
+        try{
+            $data =$this->client->request(
+                'GET',
+                "https://api.openweathermap.org/data/2.5/weather?q=" .$city. "&appid=" .$this->apiKey,
+            );
+
+            if($data->getStatusCode() === 404) {
+                throw new \Exception("Cette ville n'existe pas");
+            }
+
+            $response = $data->toArray();
+            return $response;
+
+        } catch (\Throwable $th) {
+            return ["erreur" => $th->getMessage(), "cod" => 404];
+        }
     }
 }
