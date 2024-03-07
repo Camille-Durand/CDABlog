@@ -25,3 +25,6 @@ services:
 
     App\Service\WeatherService:
         arguments: ['%env(WEATHER_API_KEY)%']
+    
+    App\Service\EmailService:
+        arguments: ['%env(SMTP_SERVER)%', '%env(SMTP_PORT)%', '%env(SMTP_ACCOUNT)%', '%env(SMTP_PWD)%']
