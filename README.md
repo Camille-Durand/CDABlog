@@ -4,7 +4,7 @@ CDA: projet test Symfony
 *(Pour fonctionner, nécessite l'ajout du fichier .env)*
 
 ## Pages du site disponibles:
-- Inscription -> inscription d'un utilisateur dans la BDD (inscriotion non fonctionnelle)
+- Inscription -> inscription d'un utilisateur dans la BDD (inscription non fonctionnelle)
 - Connexion -> connexion d'un utilisateur déjà enregistré dans la BDD (connexion non fonctionnelle)
 - Home -> liste des articles dans la BDD
 - Article -> création d'un article et envoi dans la BDD
