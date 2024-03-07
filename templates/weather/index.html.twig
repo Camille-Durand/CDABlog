@@ -1,0 +1,36 @@
+{% extends 'header.html.twig' %}
+
+{% block title %}La ptite météo à {{meteo.name}}{% endblock %}
+
+{% block body %}
+    <div class = "p-4 grid grid-cols-4 gap-4 text-center">
+        <h1 class="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text:4xl lg:text-4xl dark:text-white">Météo à {{meteo.name}}</h1>
+        
+        <h2 class="text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text:4xl lg:text-4xl dark:text-white">{{meteo.main.temp -273.15}}°c</h2>
+
+        <div class="flex justify-center items-center">
+
+            {% if meteo.weather[0].icon == "01d" %} <!-- clear sky -->
+                <img src="https://openweathermap.org/img/wn/01d@2x.png" alt="icon météo" width="120" />
+            {% elseif meteo.weather[0].icon == "02d" %} <!-- few clouds -->
+                <img src="https://openweathermap.org/img/wn/02d@2x.png" alt="icon météo" width="120" />
+            {% elseif meteo.weather[0].icon == "03d" %} <!-- scattered clouds -->
+                <img src="https://openweathermap.org/img/wn/03d@2x.png" alt="icon météo" width="120" />
+            {% elseif meteo.weather[0].icon == "04d" %} <!-- broken clouds -->
+                <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="icon météo" width="120" />
+            {% elseif meteo.weather[0].icon == "09d" %} <!-- shower rain -->
+                <img src="https://openweathermap.org/img/wn/09d@2x.png" alt="icon météo" width="120" />
+            {% elseif meteo.weather[0].icon == "10d" %} <!-- rain -->
+                <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="icon météo" width="120" />
+            {% elseif meteo.weather[0].icon == "11d" %} <!-- thunderstorm -->
+                <img src="https://openweathermap.org/img/wn/11d@2x.png" alt="icon météo" width="120" />
+            {% elseif meteo.weather[0].icon == "13d" %} <!-- snow -->
+                <img src="https://openweathermap.org/img/wn/13d@2x.png" alt="icon météo" width="120" />
+            {% elseif meteo.weather[0].icon == "50d" %} <!-- mist -->
+                <img src="https://openweathermap.org/img/wn/50d@2x.png" alt="icon météo" width="120" />
+            {% endif %}
+        </div>
+        <p class="text-lg font-extrabold leading-none tracking-tight text-gray-900 md:text:4xl lg:text-4xl dark:text-white">{{meteo.weather[0].main}}: {{meteo.weather[0].description}}</p>
+    </div>
+    
+{% endblock %}

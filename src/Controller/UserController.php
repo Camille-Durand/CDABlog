@@ -11,12 +11,13 @@ use Symfony\Component\HttpFoundation\Request;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Service\UtilsService;
 use App\Repository\UserRepository;
+use App\Service\UtilisateurService;
 
 
 class UserController extends AbstractController
 {
     #[Route('/user/add', name: 'app_user_add')]
-    public function addUtilisateur(Request $request, EntityManagerInterface $em, UserRepository $repo): Response
+    public function addUtilisateur(Request $request, UtilisateurService $userService ,EntityManagerInterface $em, UserRepository $repo): Response
     {
         $msg = "";
         $gens = new User();
@@ -33,7 +34,7 @@ class UserController extends AbstractController
                 $gens->setImg(utilsService::cleanInput($gens->getImg()));
             }
 
-            if(!$repo->findOneBy(['mail'=>$gens->getMail()])){
+            if($userService->create($gens)){
                 //miam miam le mot de passe
                 $gens->setPssword(md5($gens->getPssword()));
                 

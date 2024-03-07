@@ -25,11 +25,11 @@ class RegisterController extends AbstractController
         //condition validation du formulaire
         if($form->isSubmitted() && $form->isValid()){
             //récupération du mot de passe en clair
-            $pass = $_POST['user']['password'];
+            //$pass = $_POST['user']['password'];
             //hasher le mot de passe
-            $hassPassword = $hash->hashPassword($user, $pass);
+            //$hassPassword = $hash->hashPassword($user, $pass);
             //setter les valeurs (mot de passe activation et le rôle)
-            $user->setPassword($hassPassword);
+            //$user->setPassword($hassPassword);
             $user->setRoles(['ROLE_USER']);
             //faire persister les données
             $manager->persist($user);
